@@ -1,0 +1,312 @@
+@font-face {
+  font-family: "Gotham Bold";
+  src: url("assets/gothbold.ttf");
+}
+
+@font-face {
+  font-family: "Gotham Book";
+  src: url("assets/gothbook.ttf");
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Gotham Bold";
+  font-weight: normal;
+}
+
+.main-content {
+  background: linear-gradient(to top, #202020, #151515);
+  font-family: "Gotham Book", sans-serif;
+  color: white;
+  height: 100vh;
+}
+
+.items {
+  font-family: "Gotham Book", sans-serif;
+  color: white;
+  font-size: 25px;
+  text-align: center;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.buttons button {
+  margin: 5px;
+  padding: 15px;
+  background-color: #252525;
+  color: white;
+  border: none;
+  font-size: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "Gotham Book", sans-serif;
+  transition: transform 0.2s ease;
+}
+
+.buttons button:hover {
+  transform: scale(1.1);
+}
+
+.main-content img {
+  width: 17.5rem;
+  margin: 5px;
+  height: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 5px;
+  z-index: 1000;
+}
+
+.user-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.user-form input {
+  margin: 5px;
+  padding: 10px;
+  background-color: #252525;
+  color: white;
+  border: none;
+  font-size: 20px;
+  border-radius: 5px;
+  font-family: "Gotham Book", sans-serif;
+}
+
+.user-form label {
+  font-family: "Gotham Book", sans-serif;
+  color: white;
+  font-size: 25px;
+  text-align: center;
+}
+
+.user-form span, .required {
+  font-family: "Gotham Book", sans-serif;
+  color: white;
+  font-size: 25px;
+  text-align: center;
+}
+
+.user-form button {
+  margin: 5px;
+  padding: 15px;
+  background-color: #252525;
+  color: white;
+  border: none;
+  font-size: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "Gotham Book", sans-serif;
+  transition: transform 0.2s ease;
+}
+
+.user-form button:hover {
+  transform: scale(1.1);
+}
+
+.user-form .message {
+  font-family: "Gotham Book", sans-serif;
+  color: white;
+  font-size: 25px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.msg-input {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  margin-bottom: 25px;
+  z-index: 1000;
+}
+
+.msg-input textarea {
+  font-family: "Gotham Book", sans-serif;
+  color: white;
+  resize: none;
+  background-color: #202020;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  margin: 5px;
+  font-size: 16px;
+  width: 45vw;
+}
+
+.msg-input button {
+  font-family: "Gotham Book", sans-serif;
+  color: white;
+  background-color: #202020;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  transform: translateY(-15px);
+  margin: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease-out;
+}
+
+.msg-input button:hover {
+  background-color: #252525;
+  transform: scale(1.05) translateY(-15px);
+}
+
+.message-content {
+  font-family: "Gotham Book", sans-serif;
+}
+
+.chat-message {
+  padding: 1.1rem;
+  margin: 1rem;
+  border-radius: 8px;
+  background-color: #252525;
+  animation: send 0.3s forwards;
+  font-family: "Gotham Book", sans-serif;
+  transition: transform 0.3s ease;
+}
+
+.chat-message:hover {
+  transform: translateX(5px) scale(1.01);
+}
+
+.username {
+  font-family: "Gotham Bold", sans-serif;
+  color: lightskyblue;
+}
+
+.date {
+  margin: 5px;
+  color: gray;
+}
+
+@keyframes send {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.delete-msg {
+  padding: 5px;
+  border: none;
+  color: white;
+  background-color: red;
+  cursor: pointer;
+  border-radius: 8px;
+  text-align: center;
+  width: 150px;
+  font-family: "Gotham Bold", sans-serif;
+  height: auto;
+  margin-left: 10px;
+}
+
+.file-name {
+  margin: 5px;
+  padding: 4px;
+  font-family: monospace;
+  background-color: #101010;
+  font-size: 16px;
+  border-radius: 8px;
+}
+
+.file-box {
+  padding: 15px;
+  margin: 2px;
+  border-radius: 8px;
+  background-color: #101010;
+}
+
+.file-box span {
+  font-family: monospace;
+  background-color: #151515;
+  padding: 10px;
+  margin: 5px;
+  font-size: 16px;
+  border-radius: 8px;
+}
+
+.file-box button {
+  margin: 8px;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  font-family: "Gotham Book", sans-serif;
+  color: white;
+  text-align: center;
+  background-color: #252525;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease-out;
+}
+
+.file-box button:hover {
+  background-color: #303030;
+  transform: scale(1.05);
+}
+
+.sign-out {
+  margin: 5px;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  font-family: "Gotham Book", sans-serif;
+  color: white;
+  text-align: center;
+  background-color: rgb(0, 100, 194);
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease-out;
+}
+
+.sign-out:hover {
+  background-color: rgb(1, 78, 151);
+  transform: scale(1.05);
+}
+
+.delete-account {
+  margin: 5px;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  font-family: "Gotham Book", sans-serif;
+  color: white;
+  text-align: center;
+  background-color: rgb(194, 0, 0);
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease-out;
+}
+
+.delete-account:hover {
+  background-color: rgb(151, 1, 1);
+  transform: scale(1.05);
+}
+
+.verify-email {
+  position: absolute;
+  background-color: #101010;
+  color: white;
+  padding: 15px;
+  margin-left: 5px;
+  transform: translateY(65px);
+  border-radius: 5px;
+  font-family: "Gotham Bold", sans-serif;
+}
+
+.send-email-code {
+  padding: 5px;
+  margin: 2.5px;
+  border-radius: 5px;
+  color: white;
+  background-color: darkcyan;
+  border: none;
+  cursor: pointer;
+  font-family: "Gotham Bold", sans-serif;
+}
