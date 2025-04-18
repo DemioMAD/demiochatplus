@@ -97,9 +97,7 @@ function Register() {
       return;
     }
 
-    if (data?.user) {
-      alert("Please check your inbox to verify your email.");
-    }
+    nav("/chat")
   };
 
   return (
@@ -149,7 +147,6 @@ function ChatMessage({ message, removeMessage }) {
         )}
       </div>
       <div className="message-content">
-        {/* Render the markdown message */}
         <ReactMarkdown
           children={msg}
           components={{
@@ -233,10 +230,6 @@ function Chat() {
     e.preventDefault();
 
     const { data: fresh } = await supabase.auth.getUser();
-    if (!fresh.user?.email_confirmed_at) {
-      alert("You must verify your email to send messages.");
-      return;
-    }
 
     if (!message.trim() && !file) return;
 
@@ -300,39 +293,9 @@ function Chat() {
       nav("/");
     }
   };
-
-  const resendCode = async () => {
-    const {data: {user}, error} = await supabase.auth.getUser();
-
-    if (error) {
-      alert(error.message);
-      return;
-    }
-
-    const { error: err } = await supabase.auth.resend({
-      type: 'signup',
-      email: user.email,
-      options: {
-        emailRedirectTo: "/chat"
-      }
-    });
-
-    if (err) {
-      alert(err.message);
-      return;
-    }
-
-    alert("Please check your inbox.")
-  };
  
   return (
     <>
-      {!isEmailVerified && (
-        <>
-        <span className="verify-email">Please verify your email before sending messages. <button onClick={resendCode} className="send-email-code">Resend code</button></span>
-        <br/>
-        </>
-      )}
       <button onClick={logOut} className="sign-out"><FaSignOutAlt /> Sign out</button>
       <button onClick={deleteAccount} className="delete-account"><FaTrashCan /> Delete account</button>
 
