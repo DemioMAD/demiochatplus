@@ -360,6 +360,7 @@ function Chat() {
             }
           }}
           rows={2}
+          
         />
         <button type="submit"><FaPaperPlane /></button>
       </form>
